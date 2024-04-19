@@ -44,9 +44,9 @@ function Login() {
 
   return (
     <div className="min-h-screen bg-base-200 flex items-center">
-      <div className="card mx-auto w-full md:w-8/12 xl:w-3/12 shadow-xl ">
+      <div className="card mx-auto w-full sm:w-5/12 md:w-4/12 xl:w-3/12 shadow-xl ">
         <div className="bg-base-100 rounded-xl ">
-          <div className="py-24 px-10">
+          <div className="py-10 px-10">
             <h2 className="text-2xl font-semibold mb-2 text-center">Login</h2>
             <form onSubmit={(e) => submitForm(e)}>
               <div className="mb-4">

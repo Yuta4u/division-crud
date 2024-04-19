@@ -1,9 +1,17 @@
-const BtnAddDivision = () => {
+import { useNavigate } from "react-router-dom"
+
+const BtnLogout = () => {
+  const navigate = useNavigate()
+  const handleOnClick = () => {
+    localStorage.removeItem("token")
+    navigate("/login", { replace: true })
+  }
+
   return (
     <button
       className="btn btn-circle bg-base-200 border-none btn-sm hover:bg-base-500 tooltip tooltip-bottom flex justify-center align-middle"
-      data-tip="Add Division"
-      onClick={() => document.getElementById("dialog_add_division").showModal()}
+      data-tip="Logout"
+      onClick={handleOnClick}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -16,10 +24,10 @@ const BtnAddDivision = () => {
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
-          d="M12 4.5v15m7.5-7.5h-15"
+          d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15m3 0 3-3m0 0-3-3m3 3H9"
         />
       </svg>
     </button>
   )
 }
-export default BtnAddDivision
+export default BtnLogout

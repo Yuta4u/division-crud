@@ -4,6 +4,7 @@ import { Navigate } from "react-router-dom/dist"
 function ProtectedRoute({ children }) {
   const queryClient = useQueryClient()
   const user = queryClient.getQueryData("user")
+  // const user = true
   if (!user) {
     return <Navigate to="/login" replace />
   }
