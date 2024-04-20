@@ -14,7 +14,6 @@ function Login() {
     username: "",
   }
 
-  const [loading, setLoading] = useState(false)
   const [errorMessage, setErrorMessage] = useState("")
   const [loginObj, setLoginObj] = useState(INITIAL_LOGIN_OBJ)
 
@@ -70,12 +69,7 @@ function Login() {
               </div>
 
               <ErrorText styleClass="mt-8">{errorMessage}</ErrorText>
-              <button
-                type="submit"
-                className={
-                  "btn mt-2 w-full btn-primary" + (loading ? " loading" : "")
-                }
-              >
+              <button type="submit" className={"btn mt-2 w-full btn-primary"}>
                 Login
               </button>
             </form>
