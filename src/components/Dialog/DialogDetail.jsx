@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { getDetailDivision } from "../../services/division"
 import SkeletonDetail from "../Skeleton/SkeletonDetail"
+import DialogShowSub from "./DialogShowSub"
 
 function DialogDetail({ selectedData, setSelectedData }) {
   const [detailDivision, setDetailDivision] = useState(null)
@@ -37,15 +38,15 @@ function DialogDetail({ selectedData, setSelectedData }) {
           <h3 className="font-bold text-xs mb-4">Sub</h3>
           <h3 className="font-bold text-xs">
             {detailDivision &&
-              detailDivision?.sub?.map((e) => (
-                <div className="flex mb-4">
+              detailDivision?.sub?.map((e, i) => (
+                <div key={i} className="flex mb-4">
                   <div className="w-1/2 flex justify-between mr-1">
                     <div>{e?.name}</div>
                     <div>:</div>
                   </div>
                   <div>
-                    {e?.sub?.map((sub) => (
-                      <div>-{sub?.name}</div>
+                    {e?.sub?.map((sub, j) => (
+                      <div key={j}>-{sub?.name}</div>
                     ))}
                   </div>
                 </div>

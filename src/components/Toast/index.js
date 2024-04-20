@@ -9,6 +9,13 @@ export const toastError = (msg) => {
   toast.error(msg)
 }
 
+export const ToastErrorTR = (msg) => {
+  toast.remove()
+  toast.error(msg, {
+    position: "bottom-right",
+  })
+}
+
 // toast success
 export const toastSuccess = (msg) => {
   toast.remove()

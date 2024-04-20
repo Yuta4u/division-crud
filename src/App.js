@@ -46,8 +46,14 @@ function App() {
             element={<Navigate to={false ? "/home" : "/login"} replace />}
           />
         </Routes>
+        <Toaster
+          toastOptions={{
+            style: {
+              zIndex: 1000,
+            },
+          }}
+        />
       </Router>
-      <Toaster />
     </>
   )
 }
