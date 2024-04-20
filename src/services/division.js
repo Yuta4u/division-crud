@@ -13,8 +13,10 @@ export const getDivision = async () => {
         "Content-Type": "application/json",
       },
     }).then((response) => response?.data?.data)
+    console.log(act, "ini act")
     return act
   } catch (err) {
+    console.log("error cuy")
     toastError("invalid token")
   }
 }

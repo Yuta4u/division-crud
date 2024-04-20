@@ -48,7 +48,7 @@ const Home = () => {
         setPageData(division.slice((currentPage - 1) * 10, currentPage * 10))
       }
     }
-  }, [currentPage])
+  }, [currentPage, division, flagSearch, searchData])
 
   useEffect(() => {
     if (searchKeyword) {
@@ -65,7 +65,7 @@ const Home = () => {
         setPageData(division.slice(0, 10))
       }
     }
-  }, [searchKeyword])
+  }, [division, flagSearch, searchKeyword])
 
   return (
     <div className="p-4 h-['100vh'] w-full justify-center">
