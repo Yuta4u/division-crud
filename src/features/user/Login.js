@@ -1,4 +1,4 @@
-import { useState, useRef } from "react"
+import { useState } from "react"
 import ErrorText from "../../components/Typography/ErrorText"
 import InputText from "../../components/Input/InputText"
 import { loginAction } from "../../services/user"

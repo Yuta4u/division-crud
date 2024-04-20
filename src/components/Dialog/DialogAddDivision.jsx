@@ -2,14 +2,12 @@ import { useState } from "react"
 import SelectDivision from "../Select/SelectDivision"
 import { divisionData } from "../../dummy/divisionData"
 import DialogShowSub from "./DialogShowSub"
-import { ToastErrorTR, toastError } from "../Toast"
+import { ToastErrorTR } from "../Toast"
 import { postDivision } from "../../services/division"
 import { useMutation, useQueryClient } from "@tanstack/react-query"
 
 const DialogAddDivision = ({ reset }) => {
   const queryClient = useQueryClient()
-  const [data, setData] = useState({})
-  const [currentSub, setCurrentSub] = useState(1)
   const [flagSub1, setFlagSub1] = useState(true)
   const [subData, setSubData] = useState([])
 
@@ -49,16 +47,15 @@ const DialogAddDivision = ({ reset }) => {
     const selectedOption1 = selectElement1.options[selectElement1.selectedIndex]
     const selectedSub = selectedOption1.value
     const tempSub = subData.map((_) => _?.name)
+    var checkboxes = document.querySelectorAll("input[type='checkbox']")
 
     if (tempSub.includes(selectedSub)) {
       ToastErrorTR("Sub sudah terdaftar")
-      var checkboxes = document.querySelectorAll("input[type='checkbox']")
       checkboxes.forEach(function (checkbox) {
         checkbox.checked = false
       })
     } else {
       var selectedValues = []
-      var checkboxes = document.querySelectorAll("input[type='checkbox']")
       checkboxes.forEach(function (checkbox) {
         if (checkbox.checked) {
           selectedValues.push(checkbox.value)

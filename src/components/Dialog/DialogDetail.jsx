@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react"
 import { getDetailDivision } from "../../services/division"
-import SkeletonDetail from "../Skeleton/SkeletonDetail"
-import DialogShowSub from "./DialogShowSub"
 
 function DialogDetail({ selectedData, setSelectedData }) {
   const [detailDivision, setDetailDivision] = useState(null)

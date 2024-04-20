@@ -1,6 +1,5 @@
 import axios from "axios"
 import { toastError, toastLoading, toastSuccess } from "../components/Toast"
-import toast from "react-hot-toast"
 
 const token = localStorage.getItem("token")
 
